@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Hotspot</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <script src="./assets/js/fontawesome-all.min.js"></script>
+</head>
+
+<body>
+
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script type="text/javascript" src="./md5.js"></script>
+    <script type="text/javascript">
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+    </script> $(endif)
+
+    <div class="overlay"></div>
+
+    <div class="card-transparent">
+        <h3>We'lu Cafe Hotspot Login</h3>
+        <hr style="margin-bottom: 0;" />
+        <div class="notes">
+            <p>Dapatkan username dan password dengan memesan minimal satu menu</p>
+        </div>
+        <hr style="margin-top: 0;" />
+        <p>Masukan kredensi</p>
+        <br />
+        <br />
+        <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+            <input type="hidden" name="dst" value="$(link-orig)">
+            <input type="hidden" name="popup" value="true">
+            <input placeholder="Username" type="text" class="input-username" name="username" value="$(username)" />
+            <input placeholder="Password" type="password" class="input-password" name="password" />
+            <input type="submit" class="btn" value="OK">
+            <br />
+            <br />
+            $(if error)<p class="error">$(error)</p>$(endif)
+        </form>
+        <hr />
+        <p>
+            <i class="fas fa-code"></i>&nbsp; with
+            <i class="fas fa-heart"></i>&nbsp; by
+            <a href="https://www.facebook.com/edgar.pontoh.3">Edgar Pontoh</a>
+            </a>
+        </p>
+    </div>
+
+    <script>
+        document.login.username.focus();
+    </script>
+</body>
+
+</html>

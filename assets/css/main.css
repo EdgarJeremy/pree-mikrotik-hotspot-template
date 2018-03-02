@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', Arial;
+}
+body {
+    background-image: url("../../img/background.jpg");
+    background-size: cover;
+}
+.overlay {
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.card-transparent {
+    max-width: 500px;
+    background-color: rgba(255,255,255,0.9);
+    padding: 50px 0px;
+    margin: 50px auto;
+    text-align: center;
+    z-index: 9;
+}
+.card-transparent h3 {
+    font-size: 30px;
+}
+.card-transparent hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.card-transparent p {
+    width: 270px;
+    display: inline-block;
+}
+.card-transparent input {
+    text-align: center;
+    padding: 10px 0px;
+    border: 1px solid #222222;
+    font-size: 15px;
+    width: 250px;
+    outline: 0;
+}
+.card-transparent .input-username {
+    border-bottom: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.card-transparent .input-password {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.card-transparent .btn {
+    margin-top: 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    transition: 0.2s ease;
+}
+.card-transparent .btn:hover {
+    background-color: #2980b9;
+}
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+.notes {
+    background-color: #2c3e50;
+    color: #ffffff;
+    display: block;
+    padding: 10px;
+    margin-top: -1px;
+}
+.error {
+    color: #e74c3c;
+}
