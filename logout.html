@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Logout Hotspot</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <script src="./assets/js/fontawesome-all.min.js"></script>
+
+    <script>
+        function openLogin() {
+            if(window.name != 'hotspot_logout') return true;
+            open('$(link-login)','_blank', '');
+            window.close();
+            return false;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="card-transparent">
+        <h3>We'lu Cafe Hotspot Logout</h3>
+        <hr style="margin-bottom: 0;" />
+        <div class="notes">
+            <p>
+                Anda baru saja logout
+            </p>
+        </div>
+        <hr style="margin-top: 0;" />
+        <div class="table-container">
+            <form action="$(link-login)" name="logout" onSubmit="return openLogin()">
+            <table class="status-table">
+                <tr>
+                    <td>Username</td>
+                    <td>: $(username)</td>
+                </tr>
+                <tr>
+                    <td>IP Address</td>
+                    <td>: $(ip)</td>
+                </tr>
+                <tr>
+                    <td>Mac Address</td>
+                    <td>: $(mac)</td>
+                </tr>
+                <tr>
+                    <td>Bytes up/down</td>
+                    <td>: $(bytes-in-nice) / $(bytes-out-nice)</td>
+                </tr>
+                $(if session-time-left)
+                <tr>
+                    <td>Waktu terhubung/Sisa waktu</td>
+                    <td>: $(uptime) / $(session-time-left)</td>
+                </tr>
+                $(else)
+                <tr>
+                    <td>Waktu terhubung</td>
+                    <td>: $(uptime)</td>
+                </tr>
+                $(endif)
+            </table>
+            <input type="submit" value="Login" class="btn">
+            </form>
+        </div>
+        <hr />
+        <p>
+            <i class="fas fa-code"></i>&nbsp; with
+            <i class="fas fa-heart"></i>&nbsp; by
+            <a href="https://www.facebook.com/edgar.pontoh.3">Edgar Pontoh</a>
+            </a>
+        </p>
+    </div>
+
+    <script>
+        document.login.username.focus();
+    </script>
+</body>
+
+</html>
