@@ -22,7 +22,7 @@ body {
     max-width: 500px;
     background-color: rgba(255,255,255,0.9);
     padding: 50px 0px;
-    margin: 50px auto;
+    margin: 30px auto;
     text-align: center;
     z-index: 9;
 }
@@ -80,4 +80,23 @@ a:hover {
 }
 .error {
     color: #e74c3c;
+}
+.status-table tr td:nth-child(1) {
+    text-align: right;
+}
+.status-table tr td:nth-child(2) {
+    text-align: left;
+}
+.status-table {
+    width: 100%;
+    font-size: 13px;
+    padding: 20px;
+    border-collapse: collapse;
+}
+.status-table td {
+    border: 1px solid #222222;
+    padding: 10px;
+}
+.table-container {
+    padding: 0 30px;
 }
